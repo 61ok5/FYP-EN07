@@ -1,1 +1,1 @@
-# git clone https://github.com/61ok5/fyp-frontend.git
+git clone https://github.com/61ok5/fyp-frontend.git
