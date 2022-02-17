@@ -16,6 +16,14 @@
   background-attachment: fixed;
 }
 
+.app__headerbg {
+  background: url('./assets/headerbg.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
 .app__wrapper {
   display: flex;
   justify-content: space-between;
@@ -65,11 +73,12 @@
     border: none;
     outline: none;
     cursor: pointer;
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
 }
 
 .p__cormorant {
   font-family: var(--font-base);
-  color: var(--color-white);
+  color: var(--color-black);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: capitalize;
@@ -78,7 +87,29 @@
   font-size: 23px;
 }
 
+.p__cormorant_white {
+  font-family: var(--font-base);
+  color: var(--color-white);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  font-feature-settings: 'tnum' on, 'lnum' on;
+  line-height: 29.9px;
+  font-size: 23px;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.95);
+}
+
 .p__opensans {
+  font-family: var(--font-alt);
+  color: var(--color-black);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  line-height: 28px;
+  font-size: 16px;
+}
+
+.p__opensans_white {
   font-family: var(--font-alt);
   color: var(--color-white);
   font-weight: 400;
@@ -86,6 +117,7 @@
   text-transform: capitalize;
   line-height: 28px;
   font-size: 16px;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
 }
 
 .headtext__cormorant {
@@ -99,6 +131,10 @@
 
 .spoon__img {
   width: 45px;
+}
+
+.key__img {
+  width: 60px;
 }
 
 @media screen and (min-width: 2000px) {
@@ -120,6 +156,10 @@
 
   .spoon__img {
     width: 80px;
+  }
+
+  .key__img {
+    width: 100px;
   }
 }
 

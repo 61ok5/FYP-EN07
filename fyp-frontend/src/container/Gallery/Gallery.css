@@ -1,7 +1,7 @@
 .app__gallery {
     flex-direction: row;
 
-    background: var(--color-black);
+    background: var(--color-white);
     padding: 4rem 0 4rem 6rem;
 }
 
@@ -88,12 +88,12 @@
     color: var(--color-golden);
     font-size: 2rem;
     cursor: pointer;
-    background: var(--color-black);
+    background: var(--color-white);
     border-radius: 5px;
 }
 
 .gallery__arrow-icon:hover {
-    color: var(--color-white);
+    color: var(--color-black);
 }
 
 @media screen and (min-width: 2000px) {

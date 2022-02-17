@@ -8,7 +8,7 @@
     align-items: center;
     flex-direction: column;
 
-    background: var(--color-black);
+    background: var(--color-white);
     padding-top: 0;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .app__footer-links_icons svg {
-    color: var(--color-white);
+    color: var(--color-black);
     margin: 0.5rem;
     font-size: 24px;
     cursor: pointer;
@@ -57,7 +57,7 @@
 
 .app__footer-headtext {
     font-family: var(--font-base);
-    color: var(--color-white);
+    color: var(--color-black);
     font-weight: 400;
     letter-spacing: 0.04em;
     text-transform: capitalize;
