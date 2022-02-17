@@ -7,21 +7,21 @@ import './Navbar.css';
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
   return (
-    <nav className="app__navbar">
+    <nav className="app__navbar app__headerbg">
       <div className="app__navbar-logo">
         <img src={images.gericht} alt="app__logo" />
       </div>
       <ul className="app__navbar-links">
-        <li className="p__opensans"><a href="#home">Home</a></li>
-        <li className="p__opensans"><a href="#about">About</a></li>
-        <li className="p__opensans"><a href="#menu">Menu</a></li>
-        <li className="p__opensans"><a href="#awards">Awards</a></li>
-        <li className="p__opensans"><a href="#contact">Contact</a></li>
+        <li className="p__opensans_white"><a href="#home">Home</a></li>
+        <li className="p__opensans_white"><a href="#about">About</a></li>
+        <li className="p__opensans_white"><a href="#menu">Menu</a></li>
+        <li className="p__opensans_white"><a href="#awards">Awards</a></li>
+        <li className="p__opensans_white"><a href="#contact">Contact</a></li>
       </ul>
       <div className="app__navbar-login">
-        <a href="#login" className="p__opensans">Log In / Registration</a>
+        <a href="#login" className="p__opensans_white">Log In / Registration</a>
         <div />
-        <a href="/" className="p__opensans">Book Table</a>
+        <a href="/" className="p__opensans_white">Book Table</a>
       </div>
       <div className="app__navbar-smallscreen">
         <GiHamburgerMenu color="#fff" fontSize={27} onClick={() => setToggleMenu(true)} />

@@ -20,6 +20,9 @@ import award05 from '../assets/award05.png';
 import sign from '../assets/sign.png';
 import quote from '../assets/quote.png';
 import gericht from '../assets/gericht.png';
+import key from '../assets/key.svg';
+import headerbg from '../assets/headerbg.jpg';
+import recom from '../assets/recom.png';
 
 export default {
   bg,
@@ -44,4 +47,7 @@ export default {
   sign,
   quote,
   gericht,
+  key,
+  headerbg,
+  recom,
 };
