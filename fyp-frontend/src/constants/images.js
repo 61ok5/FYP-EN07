@@ -23,6 +23,14 @@ import gericht from '../assets/gericht.png';
 import key from '../assets/key.svg';
 import headerbg from '../assets/headerbg.jpg';
 import recom from '../assets/recom.png';
+import design from '../assets/design.jpg';
+import development from '../assets/development.jpg';
+import marketing from '../assets/marketing.jpg';
+import software from '../assets/it-and-software.jpg';
+import personal from '../assets/personal-development.jpg';
+import business from '../assets/business.jpg';
+import photography from '../assets/photography.jpg';
+import music from '../assets/music.jpg';
 
 export default {
   bg,
@@ -50,4 +58,12 @@ export default {
   key,
   headerbg,
   recom,
+  design,
+  development,
+  marketing,
+  software,
+  personal,
+  business,
+  photography,
+  music,
 };

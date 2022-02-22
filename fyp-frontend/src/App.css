@@ -24,6 +24,14 @@
   background-attachment: fixed;
 }
 
+.app__aboutusbg {
+  background: url('./assets/blackboard.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
 .app__wrapper {
   display: flex;
   justify-content: space-between;

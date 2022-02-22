@@ -52,6 +52,15 @@
     color: var(--color-grey);
 }
 
+.app_aboutus-new {
+    width: 100%;
+    max-width: 134rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+}
+
 @media screen and (min-width: 2000px) {
     .app__aboutus-content_knife img {
         height: 1110px;

@@ -5,7 +5,7 @@ import { images } from '../../constants';
 import './Header.css';
 
 const Header = () => (
-  <div className="app__header app__wrapper section__padding app__headerbg" id="home">
+  <div className="app__header app__wrapper section__padding app__headerbg" id="home" style={{ paddingTop: '8rem' }}>
     <div className="app__wrapper_info">
       <SubHeading title="Key To Success" />
       <h1 className="app__header-h1" style={{ textShadow: '0px 0px 4px rgba(0, 0, 0, 0.5)' }}>Independent Learning</h1>
