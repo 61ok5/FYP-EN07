@@ -4,7 +4,9 @@
     justify-content: space-between;
     align-items: center;
     background: var(--color-white);
-    
+
+    background-color: transparent;
+    position: absolute;
     padding: 1rem 2rem;
 
     /* border-bottom: 1px solid var(--color-golden); */
