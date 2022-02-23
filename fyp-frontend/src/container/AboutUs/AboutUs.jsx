@@ -5,40 +5,40 @@ import './AboutUs.css';
 
 const AboutUs = () => (
   <div className="app__aboutus app__aboutusbg section__padding" id="about">
-    <h1 className="p__cormorant_white flex__center" style={{ fontSize: '4rem', marginBottom: '2rem' }}>Popular Course Topics</h1>
+    <h1 className="p__cormorant_white_blackboard flex__center" style={{ fontWeight: '400', fontSize: '5.5rem', marginBottom: '2rem' }}>Popular Course Topics</h1>
     <div className="flex__center">
       <div className="flex__center" style={{ display: 'flex', flexWrap: 'wrap' }}>
         <div style={{ margin: '2rem' }}>
           <img src={images.design} alt="design" />
-          <p className="p__cormorant_white" style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>Design</p>
+          <p className="p__cormorant_white_blackboard" style={{ fontSize: '2rem', marginTop: '0.5rem' }}>Design</p>
         </div>
         <div style={{ margin: '2rem' }}>
           <img src={images.development} alt="development" />
-          <p className="p__cormorant_white" style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>Development</p>
+          <p className="p__cormorant_white_blackboard" style={{ fontSize: '2rem', marginTop: '0.5rem' }}>Development</p>
         </div>
         <div style={{ margin: '2rem' }}>
           <img src={images.marketing} alt="marketing" />
-          <p className="p__cormorant_white" style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>Marketing</p>
+          <p className="p__cormorant_white_blackboard" style={{ fontSize: '2rem', marginTop: '0.5rem' }}>Marketing</p>
         </div>
         <div style={{ margin: '2rem' }}>
           <img src={images.software} alt="software" />
-          <p className="p__cormorant_white" style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>IT & Software</p>
+          <p className="p__cormorant_white_blackboard" style={{ fontSize: '2rem', marginTop: '0.5rem' }}>IT & Software</p>
         </div>
         <div style={{ margin: '2rem' }}>
           <img src={images.personal} alt="personal" />
-          <p className="p__cormorant_white" style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>Personal Development</p>
+          <p className="p__cormorant_white_blackboard" style={{ fontSize: '2rem', marginTop: '0.5rem' }}>Personal Development</p>
         </div>
         <div style={{ margin: '2rem' }}>
           <img src={images.business} alt="business" />
-          <p className="p__cormorant_white" style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>Business</p>
+          <p className="p__cormorant_white_blackboard" style={{ fontSize: '2rem', marginTop: '0.5rem' }}>Business</p>
         </div>
         <div style={{ margin: '2rem' }}>
           <img src={images.photography} alt="photography" />
-          <p className="p__cormorant_white" style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>Photography</p>
+          <p className="p__cormorant_white_blackboard" style={{ fontSize: '2rem', marginTop: '0.5rem' }}>Photography</p>
         </div>
         <div style={{ margin: '2rem' }}>
           <img src={images.music} alt="music" />
-          <p className="p__cormorant_white" style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>Music</p>
+          <p className="p__cormorant_white_blackboard" style={{ fontSize: '2rem', marginTop: '0.5rem' }}>Music</p>
         </div>
       </div>
     </div>
