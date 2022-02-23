@@ -1,7 +1,7 @@
 .app__gallery {
     flex-direction: row;
-
-    background: var(--color-white);
+    background-color: #fffdf4;
+    /* background: var(--color-white); */
     padding: 4rem 0 4rem 6rem;
 }
 

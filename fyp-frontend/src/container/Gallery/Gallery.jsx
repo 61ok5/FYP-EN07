@@ -21,10 +21,10 @@ const Gallery = () => {
     <div className="app__gallery flex__center">
       <div className="app__gallery-content">
         <div style={{ marginBottom: '1rem' }}>
-          <p className="p__opensans" style={{ color: '#666666', fontSize: '2rem', marginBottom: '1rem' }}>The best of the best</p>
+          <p className="p__opensans" style={{ color: '#666666', fontSize: '2rem', lineHeight: '4rem' }}>The best of the best</p>
           <img src={images.key} alt="key_image" className="key__img" />
         </div>
-        <h1 className="headtext__cormorant">Top 10 Courses</h1>
+        <h1 className="headtext__cormorant" style={{ fontSize: '5rem', marginBottom: '1rem', lineHeight: '6rem' }}>Top 10 Courses</h1>
         <p className="p__opensans" style={{ color: '#888888', marginTop: '2rem', marginBottom: '2rem' }}>Top 10 courses recommended by deep learning algorithms based on user reviews.</p>
         <button type="button" className="custom__button p__opensans_white" style={{ textShadow: '0px 0px 2px rgba(0, 0, 0, 0.6)' }}>View More</button>
       </div>
