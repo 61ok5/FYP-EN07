@@ -1,4 +1,5 @@
 import AboutUs from './AboutUs/AboutUs';
+import Bridge from './Bridge/Bridge';
 import Chef from './Chef/Chef';
 import FindUs from './Findus/FindUs';
 import Footer from './Footer/Footer';
@@ -10,6 +11,7 @@ import SpecialMenu from './Menu/SpecialMenu';
 
 export {
   AboutUs,
+  Bridge,
   Chef,
   FindUs,
   Footer,

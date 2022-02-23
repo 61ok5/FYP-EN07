@@ -1,0 +1,91 @@
+.app__bridge {
+    position: relative;
+    background-color: #f7f0cd;
+}
+
+.app__bridge-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.app__bridge-overlay img {
+    width: 391px;
+    height: 415px;
+    z-index: 0;
+}
+
+.app__bridge-content {
+    width: 100%;
+    z-index: 2;
+}
+
+.app__bridge-content_about {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+
+    text-align: right;
+}
+
+.app__bridge-content_knife {
+    margin: 2rem 4rem;
+}
+
+.app__bridge-content_knife img {
+    height: 910px;
+}
+
+.app__bridge-content_history {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    text-align: left;
+}
+
+.app__bridge-content_about p,
+.app__bridge-content_history p {
+    margin: 2rem 0;
+    color: var(--color-grey);
+}
+
+.app_bridge-new {
+    width: 100%;
+    max-width: 134rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+}
+
+@media screen and (min-width: 2000px) {
+    .app__bridge-content_knife img {
+        height: 1110px;
+    }
+
+    .app__bridge-content_about p,
+    .app__bridge-content_history p {
+        margin: 4rem 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .app__bridge-content {
+        flex-direction: column;
+    }
+
+    .app__bridge-content_knife {
+        margin: 4rem 0;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .app__bridge-overlay img {
+        width: 80%;
+        height: 320px;
+    }
+}
