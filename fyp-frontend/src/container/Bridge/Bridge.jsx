@@ -5,14 +5,14 @@ import './Bridge.css';
 
 const Bridge = () => (
   <div className="app__bridge section__padding" id="bridge">
-    <div className="flex__center" style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'column' }}>
-      <h1 className="p__cormorant_white" style={{ fontSize: '2rem', textShadow: '0px 0px 4px rgba(0, 0, 0, 0.6', marginBottom: '1rem' }}>Cooperated with</h1>
+    <div className="flex__center" style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'column', paddingBottom: '2rem' }}>
+      <h1 className="p__cormorant_white" style={{ fontSize: '2rem', textShadow: '0px 0px 4px rgba(0, 0, 0, 0.6)', marginBottom: '1rem' }}>Cooperated with</h1>
       <img src={images.key} alt="key" className="key__img" />
     </div>
     <div className="flex__center" style={{ justifyContent: 'space-evenly', display: 'flex', flexWrap: 'wrap' }}>
-      <img src={images.cityu} alt="cityu" style={{ width: '15rem' }} />
-      <img src={images.sengital} alt="sengital" style={{ width: '15rem' }} />
-      <img src={images.udemy} alt="udemy" style={{ width: '15rem' }} />
+      <img src={images.cityu} alt="cityu" style={{ padding: '1rem', width: '15rem' }} />
+      <img src={images.sengital} alt="sengital" style={{ padding: '1rem', width: '15rem' }} />
+      <img src={images.udemy} alt="udemy" style={{ padding: '1rem', width: '15rem' }} />
     </div>
     {/* <div className="app__bridge-overlay flex__center">
       <img src={images.G} alt="G_overlay" />
