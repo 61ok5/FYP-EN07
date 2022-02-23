@@ -4,8 +4,8 @@ import { images } from '../../constants';
 import './AboutUs.css';
 
 const AboutUs = () => (
-  <div className="app__aboutus app__aboutusbg section__padding" id="about">
-    <h1 className="p__cormorant_white_blackboard flex__center" style={{ fontWeight: '400', fontSize: '5.5rem', marginBottom: '2rem' }}>Popular Course Topics</h1>
+  <div className="app__aboutus app__aboutusbg section__padding" id="topics">
+    <h1 className="p__cormorant_white_blackboard flex__center" style={{ fontWeight: '400', fontSize: '5.5rem', marginBottom: '2rem', lineHeight: '6rem' }}>Popular Course Topics</h1>
     <div className="flex__center">
       <div className="flex__center" style={{ display: 'flex', flexWrap: 'wrap' }}>
         <div style={{ margin: '2rem' }}>
