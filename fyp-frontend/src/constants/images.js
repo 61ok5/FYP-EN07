@@ -23,14 +23,17 @@ import gericht from '../assets/gericht.png';
 import key from '../assets/key.svg';
 import headerbg from '../assets/headerbg.jpg';
 import recom from '../assets/recom.png';
-import design from '../assets/design.jpg';
-import development from '../assets/development.jpg';
-import marketing from '../assets/marketing.jpg';
-import software from '../assets/it-and-software.jpg';
-import personal from '../assets/personal-development.jpg';
-import business from '../assets/business.jpg';
-import photography from '../assets/photography.jpg';
-import music from '../assets/music.jpg';
+import design from '../assets/design.png';
+import development from '../assets/development.png';
+import marketing from '../assets/marketing.png';
+import software from '../assets/it-and-software.png';
+import personal from '../assets/personal-development.png';
+import business from '../assets/business.png';
+import photography from '../assets/photography.png';
+import music from '../assets/music.png';
+import cityu from '../assets/cityu.png';
+import sengital from '../assets/sengital.png';
+import udemy from '../assets/udemy.png';
 
 export default {
   bg,
@@ -66,4 +69,7 @@ export default {
   business,
   photography,
   music,
+  cityu,
+  sengital,
+  udemy,
 };
