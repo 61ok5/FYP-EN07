@@ -1,6 +1,10 @@
 .app__bridge {
     position: relative;
-    background-color: #f7f0cd;
+    background-color: #fcf6d8;
+
+    /* background: -webkit-linear-gradient(to top, #faf8ec, #f7ebb1);  
+    background: linear-gradient(to top, #faf8ec, #f7ebb1);  */
+
 }
 
 .app__bridge-overlay {

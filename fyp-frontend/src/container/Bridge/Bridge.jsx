@@ -6,7 +6,7 @@ import './Bridge.css';
 const Bridge = () => (
   <div className="app__bridge section__padding" id="bridge">
     <div className="flex__center" style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'column', paddingBottom: '2rem' }}>
-      <h1 className="p__cormorant_white" style={{ fontSize: '2rem', textShadow: '0px 0px 4px rgba(0, 0, 0, 0.6)', marginBottom: '1rem' }}>Cooperated with</h1>
+      <h1 className="p__cormorant_white" style={{ fontSize: '3rem', textShadow: '0px 0px 4px rgba(0, 0, 0, 0.5)', marginBottom: '1rem' }}>Cooperated with</h1>
       <img src={images.key} alt="key" className="key__img" />
     </div>
     <div className="flex__center" style={{ justifyContent: 'space-evenly', display: 'flex', flexWrap: 'wrap' }}>
