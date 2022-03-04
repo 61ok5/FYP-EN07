@@ -37,7 +37,7 @@
 }
 
 .app__navbar-links li:hover {
-    color: var(--color-grey);
+    color: var(--color-crimson);
 }
 
 .app__navbar-login {

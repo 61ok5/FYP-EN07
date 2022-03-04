@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
 import images from '../../constants/images';
@@ -6,22 +7,24 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
+  const location = useLocation();
+
   return (
-    <nav className="app__navbar">
+    <nav className="app__navbar" style={location.pathname !== '/' && { borderBottom: '0.1rem solid #ebdcac' }}>
       <div className="app__navbar-logo">
         <img src={images.gericht} alt="app__logo" />
       </div>
       <ul className="app__navbar-links">
-        <li className="p__opensans_white"><a href="#home">Home</a></li>
-        <li className="p__opensans_white"><a href="#about">About</a></li>
-        <li className="p__opensans_white"><a href="#topics">Topics</a></li>
-        <li className="p__opensans_white"><a href="/hi">Courses</a></li>
+        <li className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}><a href="#home">Home</a></li>
+        <li className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}><a href="#about">About</a></li>
+        <li className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}><a href="#topics">Topics</a></li>
+        <li className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}><a href="/hi">Courses</a></li>
         {/* <li className="p__opensans_white"><a href="#contact">Contact</a></li> */}
       </ul>
       <div className="app__navbar-login">
-        <a href="#login" className="p__opensans_white">Log In / Registration</a>
+        <a href="#login" className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}>Log In / Registration</a>
         <div />
-        <a href="/" className="p__opensans_white">Book Table</a>
+        <a href="/" className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}>Book Table</a>
       </div>
       <div className="app__navbar-smallscreen">
         <GiHamburgerMenu color="#fff" fontSize={27} onClick={() => setToggleMenu(true)} />
