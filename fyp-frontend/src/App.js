@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AboutUs, Bridge, Footer, Gallery, Header } from './container';
+import { AboutUs, Bridge, Footer, Gallery, Header, Table } from './container';
 import { Navbar } from './components';
 import './App.css';
 // import Home from './Home.jsx';
@@ -24,7 +24,7 @@ const App = () => (
       <Navbar />
       <Routes>
         <Route path="/" element={<><Header /><Bridge /><Gallery /><AboutUs /><Footer /></>} />
-        <Route path="/hi" element={<></>} />
+        <Route path="/hi" element={<><Table /></>} />
       </Routes>
     </Router>
   </>
