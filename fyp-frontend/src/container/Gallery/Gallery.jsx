@@ -1,10 +1,40 @@
-import React from 'react';
-import { BsInstagram, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+// import { BsInstagram, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
+import { BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
 
 import { images } from '../../constants';
 import './Gallery.css';
 
 const Gallery = () => {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    console.log(data);
+    // setData([]);
+  }, [data]);
+
+  useEffect(() => {
+    setLoading(true);
+    setError(false);
+    let cancel;
+    axios({
+      method: 'GET',
+      url: 'http://10.0.1.183/api/course/top',
+      params: { preload: 1, num: 10 },
+      cancelToken: new axios.CancelToken((c) => { cancel = c; }),
+    }).then((res) => {
+      setData(res.data);
+      setLoading(false);
+    }).catch((e) => {
+      if (axios.isCancel(e)) return;
+      setError(true);
+    });
+    return () => cancel();
+  }, []);
+
   const scrollRef = React.useRef(null);
 
   const scroll = (direction) => {
@@ -30,10 +60,13 @@ const Gallery = () => {
       </div>
       <div className="app__gallery-images">
         <div className="app__gallery-images_container" ref={scrollRef}>
-          {[images.gallery01, images.gallery02, images.gallery03, images.gallery04].map((image, index) => (
-            <div className="app__gallery-images_card flex__center" key={`gallery_image-${index + 1}`}>
-              <img src={image} alt="gallery_image" />
-              <BsInstagram className="gallery__image-icon" />
+          {(loading === false && error === false) && data.map((result, index) => (
+            <div className="app__gallery-images_card flex__center" style={{ alignItems: 'flex-end' }} key={`gallery_image-${index + 1}`}>
+              <img src={result.image_750x422} alt="gallery_image" />
+              <div className="p__cormorant_white" style={{ fontSize: '1rem', textShadow: '0px 0px 4px rgba(0, 0, 0, 0.5)', paddingLeft: '1rem', paddingTop: '0.5rem', width: '100%', height: '7rem', position: 'absolute', background: 'rgba(0, 0, 0, 0.3)' }}>
+                {result.title}
+              </div>
+              {/* <BsInstagram className="gallery__image-icon" /> */}
             </div>
           ))}
         </div>

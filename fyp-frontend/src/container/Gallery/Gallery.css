@@ -1,6 +1,6 @@
 .app__gallery {
     flex-direction: row;
-    background-color: #fffdf4;
+    background-color: #fffef5;
     /* background: var(--color-white); */
     padding: 4rem 0 4rem 6rem;
 }
@@ -27,6 +27,10 @@
     max-width: 50%;
     position: relative;
 }
+
+/* .app__gallery-images:hover {
+    background: rgba(255, 255, 255, 0)
+} */
 
 .app__gallery-images_container {
     display: flex;
@@ -66,7 +70,7 @@
 }
 
 .app__gallery-images_card:hover img {
-    opacity: .35;
+    opacity: .65;
 }
 
 .app__gallery-images_card:hover .gallery__image-icon {
@@ -88,12 +92,12 @@
     color: var(--color-golden);
     font-size: 2rem;
     cursor: pointer;
-    background: var(--color-white);
+    /* background: var(--color-white); */
     border-radius: 5px;
 }
 
 .gallery__arrow-icon:hover {
-    color: var(--color-black);
+    color: var(--color-white);
 }
 
 @media screen and (min-width: 2000px) {
