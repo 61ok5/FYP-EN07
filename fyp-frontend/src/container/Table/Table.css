@@ -17,6 +17,36 @@
     margin-bottom: 2rem;
   }
 
+.table_row {
+    margin-bottom: 1rem;
+    display: flex;
+    max-width: 100%;
+}
+
+.table_img { 
+    width: 30%;
+}
+
+.table_content { 
+    padding-left: 1rem; 
+    display: flex; 
+    flex-direction: column;
+    width: 70%;
+}
+
+@media screen and (max-width: 600px) {
+    .table_row {
+        flex-direction: column;
+    }
+    .table_img {
+        width: 100%;
+    }
+    .table_content {
+        padding-left: 0rem; 
+        width: 100%;
+    }
+}
+
 /* .app_table_body{
     background-color: aliceblue;
     height: 100%;

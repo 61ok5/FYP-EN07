@@ -31,17 +31,24 @@ export default function App() {
   }
 
   return (
-    <div className="app_table">
+    <div className="app_table" style={{ width: '100%' }}>
       <input className="searchBar" type="text" value={query} onChange={handleSearch} />
       {books.map((book, index) => {
         if (books.length === index + 1) {
           return <div ref={lastBookElementRef} key={book.title}>{book.title}{book.id}</div>;
         }
         return (
-          <div key={book.title} style={{ marginBottom: '1rem' }}>
-            <div style={{ fontSize: '1.5rem', marginBottom: '0.2rem' }}>{book.title}</div>
-            <div style={{ color: '#666666', marginBottom: '0.1rem' }}>{book.instructor}, {book.instructional_level}</div>
-            <div style={{ color: '#666666', marginBottom: '0.1rem' }}>{(book.i_category !== null && (book.p_category || book.ps_category)) ? `${book.i_category} - ` : ''}{(book.p_category && book.p_category) ? `${book.p_category} - ` : ''}{book.ps_category}</div>
+          <div className="table_row" key={book.title}>
+            <div className="table_img">
+              <img src={book.img} alt="img err" style={{ width: '100%' }} />
+            </div>
+            <div className="table_content">
+              <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>{book.title}</div>
+              <div style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{book.headline}</div>
+              <div style={{ fontSize: '1rem', color: '#666666', marginBottom: '0.2rem' }}>{book.instructor}, {book.instructional_level}</div>
+              <div style={{ fontSize: '1rem', color: '#666666', marginBottom: '1rem' }}>{(book.i_category !== null && (book.p_category || book.ps_category)) ? `${book.i_category} - ` : ''}{(book.p_category && book.p_category) ? `${book.p_category} - ` : ''}{book.ps_category}</div>
+              <div style={{ fontSize: '1.5rem', marginBottom: '0.2rem' }}>{book.price}</div>
+            </div>
           </div>
         );
       })}
