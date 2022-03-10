@@ -1,6 +1,5 @@
 .app_table{
-    position: absolute;
-    margin-top: 6rem;
+    margin-top: 2rem;
     height: 100%;
     width: 100%;
     padding: 0 2rem 0 2rem;
@@ -23,6 +22,15 @@
     max-width: 100%;
 }
 
+.table_row:hover {
+    background-color: rgba(220, 202, 135, 0.2);
+}
+
+.table_row:hover .table_img {
+    z-index: -1;
+}
+
+
 .table_img { 
     width: 30%;
 }
@@ -34,7 +42,16 @@
     width: 70%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1460px) {
+    .table_img {
+        width: 50%;
+    }
+    .table_content {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1175px) {
     .table_row {
         flex-direction: column;
     }
