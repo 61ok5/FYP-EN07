@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export default function useCourse() {
-const [loading, setLoading] = useState(true);
+export default function useCourse(id) {
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [course, setCourse] = useState([]);
 
   useEffect(() => {
-    console.log(loading);
-    console.log(error);
-  }, [course]);
+    setCourse([]);
+  }, [id]);
 
   useEffect(() => {
     setLoading(true);
@@ -27,7 +26,7 @@ const [loading, setLoading] = useState(true);
       setError(true);
     });
     return () => cancel();
-  }, []);
+  }, [id]);
 
   return { loading, error, course };
 }

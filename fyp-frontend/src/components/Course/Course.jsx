@@ -1,8 +1,8 @@
-// import React, { useState, useEffect } from '@testing-library/user-event';
 import React, { useState, useEffect } from 'react';
+// import React from 'react';
 import { useParams } from 'react-router-dom';
-import useCourse from './useCourse';
-
+import axios from 'axios';
+// import useCourse from './useCourse';
 // import Chip from '@mui/material/Chip';
 // import { Link } from 'react-router-dom';
 import './Course.css';
@@ -10,11 +10,25 @@ import './Course.css';
 const Course = () => {
   const { id } = useParams();
 
-  
+  const [course, setCourse] = useState([]);
+
+  const initCourse = async () => {
+    const response = await axios({
+      method: 'GET',
+      url: `http://10.0.1.183/api/course/info/${id}`,
+    });
+    response.data[0].description = response.data[0].description.replace(/<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});/gi, '');
+    // response.data.response[0].category = response.data.response[0].category.replace(/[^a-z, ']/gi, '');
+    setCourse(response.data[0]);
+  };
+
+  useEffect(() => {
+    initCourse();
+  }, [id]);
 
   return (
-    <div style={{ position: 'absolute' }}>
-      {course[0].description}
+    <div style={{ position: 'relative' }}>
+      {course.description}
     </div>
   );
   //   const Course = ({ match }) => {
