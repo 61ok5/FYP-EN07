@@ -1,4 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react';
+import { Link } from 'react-router-dom';
+import StarRatingComponent from 'react-star-rating-component';
 import useBookSearch from './useBookSearch';
 import './Table.css';
 
@@ -38,18 +40,24 @@ export default function App() {
           return <div ref={lastBookElementRef} key={book.title}>{book.title}{book.id}</div>;
         }
         return (
-          <div className="table_row" key={book.title}>
-            <div className="table_img">
-              <img src={book.img} alt="img err" style={{ width: '100%' }} />
+          <Link to={`/course/${book.id}`}>
+            <div className="table_row" key={book.title}>
+              <div className="table_img">
+                <img src={book.img} alt="img err" style={{ width: '100%', height: '100%' }} />
+              </div>
+              <div className="table_content">
+                <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{book.title}</div>
+                <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{book.headline}</div>
+                <div style={{ fontSize: '1.25rem', color: '#444444', marginBottom: '0.2rem' }}>{book.instructor}, {book.instructional_level}</div>
+                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.2rem' }}>
+                  <div style={{ fontSize: '1.5rem', color: '#DCCA87', marginRight: '0.5rem' }}>{book.rating.toPrecision(3)}</div>
+                  <StarRatingComponent name="rating" starCount={5} value={book.rating} editing={false} />
+                </div>
+                <div style={{ fontSize: '1rem', color: '#666666', marginBottom: '0.5rem' }}>{(book.i_category !== null && (book.p_category || book.ps_category)) ? `${book.i_category} - ` : ''}{(book.p_category && book.p_category) ? `${book.p_category} - ` : ''}{book.ps_category}</div>
+                <div style={{ fontSize: '1.5rem', marginBottom: '0.2rem' }}>{book.price}</div>
+              </div>
             </div>
-            <div className="table_content">
-              <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>{book.title}</div>
-              <div style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{book.headline}</div>
-              <div style={{ fontSize: '1rem', color: '#666666', marginBottom: '0.2rem' }}>{book.instructor}, {book.instructional_level}</div>
-              <div style={{ fontSize: '1rem', color: '#666666', marginBottom: '1rem' }}>{(book.i_category !== null && (book.p_category || book.ps_category)) ? `${book.i_category} - ` : ''}{(book.p_category && book.p_category) ? `${book.p_category} - ` : ''}{book.ps_category}</div>
-              <div style={{ fontSize: '1.5rem', marginBottom: '0.2rem' }}>{book.price}</div>
-            </div>
-          </div>
+          </Link>
         );
       })}
       <div>{loading && 'Loading...'}</div>
