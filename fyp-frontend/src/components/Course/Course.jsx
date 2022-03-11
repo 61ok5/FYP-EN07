@@ -12,6 +12,7 @@ const Course = () => {
   const { id } = useParams();
 
   const [course, setCourse] = useState([]);
+  const [recommemdation, setRecommemdation] = useState([]);
 
   const initCourse = async () => {
     const response = await axios({
@@ -23,13 +24,27 @@ const Course = () => {
     setCourse(response.data[0]);
   };
 
+  const initRecommadtion = async () => {
+    const response = await axios({
+      method: 'GET',
+      url: `http://10.0.1.183/api/course/result?preload=1&mode=0&toDB=0&title=${course.title}`,
+    });
+    // response.data[0].description = response.data[0].description.replace(/<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});/gi, '');
+    // response.data.response[0].category = response.data.response[0].category.replace(/[^a-z, ']/gi, '');
+    setRecommemdation(response.data[0]);
+  };
+
   useEffect(() => {
     initCourse();
   }, [id]);
 
   useEffect(() => {
-    console.log(course.rating);
+    initRecommadtion();
   }, [course]);
+
+  useEffect(() => {
+    console.log(recommemdation);
+  }, [recommemdation]);
 
   return (
     <div className="app_course">
