@@ -31,7 +31,7 @@ const Course = () => {
     });
     // response.data[0].description = response.data[0].description.replace(/<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});/gi, '');
     // response.data.response[0].category = response.data.response[0].category.replace(/[^a-z, ']/gi, '');
-    setRecommemdation(response.data[0]);
+    setRecommemdation(response.data);
   };
 
   useEffect(() => {
@@ -62,7 +62,7 @@ const Course = () => {
               <StarRatingComponent name="rating" starCount={5} value={course.rating} editing={false} />
             </div>
             <div style={{ fontSize: '1rem', color: '#666666', marginBottom: '1rem' }}>{(course.i_category !== null && (course.p_category || course.ps_category)) ? `${course.i_category} - ` : ''}{(course.p_category && course.p_category) ? `${course.p_category} - ` : ''}{course.ps_category}</div>
-            <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>{course.price}</div>
+            <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>{course.price}{recommemdation[0]}</div>
           </div>
         </div>
       </div>
