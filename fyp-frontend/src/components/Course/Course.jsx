@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import React from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import StarRatingComponent from 'react-star-rating-component';
 // import useCourse from './useCourse';
 // import Chip from '@mui/material/Chip';
 // import { Link } from 'react-router-dom';
@@ -17,7 +18,7 @@ const Course = () => {
       method: 'GET',
       url: `http://10.0.1.183/api/course/info/${id}`,
     });
-    response.data[0].description = response.data[0].description.replace(/<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});/gi, '');
+    // response.data[0].description = response.data[0].description.replace(/<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});/gi, '');
     // response.data.response[0].category = response.data.response[0].category.replace(/[^a-z, ']/gi, '');
     setCourse(response.data[0]);
   };
@@ -26,9 +27,31 @@ const Course = () => {
     initCourse();
   }, [id]);
 
+  useEffect(() => {
+    console.log(course.rating);
+  }, [course]);
+
   return (
-    <div style={{ position: 'relative' }}>
-      {course.description}
+    <div className="app_course">
+      <div className="course_bg">
+        <div className="course_content" key={course.title}>
+          <div className="course_img">
+            <img src={course.image_750x422} style={{ width: '100%', height: '100%' }} />
+          </div>
+          <div className="course_head">
+            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{course.title}</div>
+            <div style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>{course.headline}</div>
+            <div style={{ fontSize: '1.25rem', color: '#444444', marginBottom: '0.4rem' }}>{course.instructor}, {course.instructional_level}</div>
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.4rem' }}>
+              <div style={{ fontSize: '1.5rem', color: '#ad901f', marginRight: '1rem' }}>{course.rating}</div>
+              <StarRatingComponent name="rating" starCount={5} value={course.rating} editing={false} />
+            </div>
+            <div style={{ fontSize: '1rem', color: '#666666', marginBottom: '1rem' }}>{(course.i_category !== null && (course.p_category || course.ps_category)) ? `${course.i_category} - ` : ''}{(course.p_category && course.p_category) ? `${course.p_category} - ` : ''}{course.ps_category}</div>
+            <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>{course.price}</div>
+          </div>
+        </div>
+      </div>
+      <div className="course_description" dangerouslySetInnerHTML={{ __html: course.description }} />
     </div>
   );
   //   const Course = ({ match }) => {

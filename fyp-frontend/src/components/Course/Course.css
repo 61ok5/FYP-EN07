@@ -1,0 +1,39 @@
+.app_course {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.course_bg {
+    background-color: #DCCA87;
+}
+
+.course_content {
+    display: flex;
+    flex-direction: row;
+    /* position: relative; */
+    /* background: #FFFFFF; */
+}
+
+.course_img {
+    padding-bottom: 2px;
+}
+
+.course_head {
+    margin-left: 1rem;
+}
+
+.course_description {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding: 2rem; 
+}
+
+.course_description p {
+    margin-bottom: 2rem;
+}
+
+.course_description ul li {
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+}
