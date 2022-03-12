@@ -7,12 +7,13 @@ import StarRatingComponent from 'react-star-rating-component';
 // import Chip from '@mui/material/Chip';
 // import { Link } from 'react-router-dom';
 import './Course.css';
+import Recommendation from './Recommendation/Recommendation';
 
 const Course = () => {
   const { id } = useParams();
 
   const [course, setCourse] = useState([]);
-  const [recommemdation, setRecommemdation] = useState([]);
+  // const [recommemdation, setRecommemdation] = useState([]);
 
   const initCourse = async () => {
     const response = await axios({
@@ -24,27 +25,28 @@ const Course = () => {
     setCourse(response.data[0]);
   };
 
-  const initRecommadtion = async () => {
-    const response = await axios({
-      method: 'GET',
-      url: `http://10.0.1.183/api/course/result?preload=1&mode=0&toDB=0&title=${course.title}`,
-    });
-    // response.data[0].description = response.data[0].description.replace(/<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});/gi, '');
-    // response.data.response[0].category = response.data.response[0].category.replace(/[^a-z, ']/gi, '');
-    setRecommemdation(response.data);
-  };
+  // const initRecommadtion = async () => {
+  //   const response = await axios({
+  //     method: 'GET',
+  //     url: `http://10.0.1.183/api/course/result?preload=1&mode=0&toDB=0&title=${course.title}`,
+  //   });
+  //   // response.data[0].description = response.data[0].description.replace(/<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});/gi, '');
+  //   // response.data.response[0].category = response.data.response[0].category.replace(/[^a-z, ']/gi, '');
+  //   setRecommemdation(response.data);
+  // };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     initCourse();
   }, [id]);
 
-  useEffect(() => {
-    initRecommadtion();
-  }, [course]);
+  // useEffect(() => {
+  //   initRecommadtion();
+  // }, [course]);
 
-  useEffect(() => {
-    console.log(recommemdation);
-  }, [recommemdation]);
+  // useEffect(() => {
+  //   console.log(recommemdation);
+  // }, [recommemdation]);
 
   return (
     <div className="app_course">
@@ -62,11 +64,12 @@ const Course = () => {
               <StarRatingComponent name="rating" starCount={5} value={course.rating} editing={false} />
             </div>
             <div style={{ fontSize: '1rem', color: '#666666', marginBottom: '1rem' }}>{(course.i_category !== null && (course.p_category || course.ps_category)) ? `${course.i_category} - ` : ''}{(course.p_category && course.p_category) ? `${course.p_category} - ` : ''}{course.ps_category}</div>
-            <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>{course.price}{recommemdation[0]}</div>
+            <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>{course.price}</div>
           </div>
         </div>
       </div>
       <div className="course_description" dangerouslySetInnerHTML={{ __html: course.description }} />
+      <Recommendation id={id} />
     </div>
   );
   //   const Course = ({ match }) => {

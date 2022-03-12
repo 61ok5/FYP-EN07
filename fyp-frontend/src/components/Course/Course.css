@@ -5,7 +5,7 @@
 }
 
 .course_bg {
-    background-color: #DCCA87;
+    background-color: #f0e3b5;
 }
 
 .course_content {
@@ -16,7 +16,7 @@
 }
 
 .course_img {
-    padding-bottom: 2px;
+    /* padding-bottom: 2px; */
 }
 
 .course_head {
@@ -27,6 +27,7 @@
     font-size: 1.5rem;
     line-height: 2rem;
     padding: 2rem; 
+    min-height: 20rem;
 }
 
 .course_description p {
