@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 // import { BsInstagram, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
 import { BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 import { images } from '../../constants';
 import './Gallery.css';
@@ -61,13 +62,15 @@ const Gallery = () => {
       <div className="app__gallery-images">
         <div className="app__gallery-images_container" ref={scrollRef}>
           {(loading === false && error === false) && data.map((result, index) => (
-            <div className="app__gallery-images_card flex__center" style={{ alignItems: 'flex-end' }} key={`gallery_image-${index + 1}`}>
-              <img src={result.image_750x422} alt="gallery_image" />
-              <div className="p__cormorant_white" style={{ fontSize: '1rem', textShadow: '0px 0px 4px rgba(0, 0, 0, 0.5)', paddingLeft: '1rem', paddingTop: '0.5rem', width: '100%', height: '7rem', position: 'absolute', background: 'rgba(0, 0, 0, 0.3)' }}>
-                {result.title}
+            <Link to={`/course/${result.id}`}>
+              <div className="app__gallery-images_card flex__center" style={{ alignItems: 'flex-end' }} key={`gallery_image-${index + 1}`}>
+                <img src={result.image_750x422} alt="gallery_image" />
+                <div className="p__cormorant_white" style={{ fontSize: '1rem', textShadow: '0px 0px 4px rgba(0, 0, 0, 0.5)', paddingLeft: '1rem', paddingTop: '0.5rem', width: '100%', height: '7rem', position: 'absolute', background: 'rgba(0, 0, 0, 0.3)' }}>
+                  {result.title}
+                </div>
+                {/* <BsInstagram className="gallery__image-icon" /> */}
               </div>
-              {/* <BsInstagram className="gallery__image-icon" /> */}
-            </div>
+            </Link>
           ))}
         </div>
         <div className="app__gallery-images_arrows">
