@@ -4,6 +4,8 @@ import FooterOverlay from './Footer/FooterOverlay';
 import MenuItem from './Menuitem/MenuItem';
 import Navbar from './Navbar/Navbar';
 import Course from './Course/Course';
+import Login from './Login/Login';
+
 export {
   SubHeading,
   Newsletter,
@@ -11,4 +13,5 @@ export {
   MenuItem,
   Navbar,
   Course,
+  Login,
 };
