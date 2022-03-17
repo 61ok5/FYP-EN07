@@ -48,18 +48,18 @@ export const JWTProvider = ({ children }) => {
   const dispatchSB = useDispatch();
 
   const login = async (name, password) => {
-    const response = await API.login(name, password);
+    const response = await axios.post('http://10.0.1.183/api/user/login', { name, password });
     const { token, refreshToken } = response.data;
     setSession(token, refreshToken);
-    const userResponse = await API.get_admin_me();
+    const userResponse = await axios.get('http://10.0.1.183/api/user/me');
     const user = userResponse.data;
-    const menuResponse = await API.get_menu_item();
-    const menuItem = menuResponse.data;
+    // const menuResponse = await API.get_menu_item();
+    // const menuItem = menuResponse.data;
     dispatch({
       type: LOGIN,
       payload: {
         user,
-        menuItem,
+        // menuItem,
       },
     });
   };
@@ -68,7 +68,7 @@ export const JWTProvider = ({ children }) => {
   const runRefreshToken = async () => {
     try {
       const refresh_token = window.localStorage.getItem('refreshToken');
-      const response = await API.refresh_token(refresh_token);
+      const response = await axios.post('http://10.0.1.183/api/user/refresh_token', { refresh_token });
       setSession(response.data.token, response.data.refreshToken);
     } catch (e) {
 
@@ -86,7 +86,7 @@ export const JWTProvider = ({ children }) => {
 
   const tokenExpired = () => {
     const refreshToken = window.localStorage.getItem('refreshToken');
-    if (refreshToken) API.revoke_token(refreshToken);
+    if (refreshToken) axios.post('http://10.0.1.183/api/user/revoke_token', { refreshToken });
     dispatch({
       type: ACCOUNT_INITIALISE,
       payload: {
@@ -99,7 +99,7 @@ export const JWTProvider = ({ children }) => {
 
   const logout = () => {
     const refreshToken = window.localStorage.getItem('refreshToken');
-    API.revoke_token(refreshToken);
+    axios.post('http://10.0.1.183/api/user/revoke_token', { refreshToken });
     setSession(null);
     dispatch({ type: LOGOUT });
   };
@@ -111,16 +111,16 @@ export const JWTProvider = ({ children }) => {
         const refreshToken = window.localStorage.getItem('refreshToken');
         if (verifyToken(serviceToken)) {
           setSession(serviceToken, refreshToken);
-          const response = await API.get_admin_me();
+          const response = axios.get('http://10.0.1.183/api/user/me');
           const user = response.data;
-          const menuResponse = await API.get_menu_item();
-          const menuItem = menuResponse.data;
+          // const menuResponse = await API.get_menu_item();
+          // const menuItem = menuResponse.data;
           dispatch({
             type: ACCOUNT_INITIALISE,
             payload: {
               isLoggedIn: true,
               user,
-              menuItem,
+            //   menuItem,
             },
           });
         } else {
@@ -132,7 +132,12 @@ export const JWTProvider = ({ children }) => {
 
       axios.interceptors.response.use(
         (response) => {
-          if (!API.skipRefresh(response.config.url)) {
+          const list = [
+            'http://10.0.1.183/api/user/login',
+            'http://10.0.1.183/api/user/refresh_token',
+            'http://10.0.1.183/api/user/revoke_token',
+          ];
+          if (!list.includes(response.config.url)) {
             callRefreshToken();
             return response;
           }
