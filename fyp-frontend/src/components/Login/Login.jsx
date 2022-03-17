@@ -7,7 +7,7 @@ import JWTLogin from './JWTLogin';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: '#f2f1ed',
     height: '100vh',
     minHeight: '100%',
   },
@@ -68,7 +68,7 @@ const Login = () => {
               </Grid>
               <Grid item xs={12}>
                 <Typography variant="h3" align="center" className={classes.title}>
-                  Web Portal
+                  Login / Register
                 </Typography>
               </Grid>
               <Grid item xs={12}>

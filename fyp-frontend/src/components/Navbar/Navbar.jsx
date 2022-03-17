@@ -19,13 +19,13 @@ const Navbar = () => {
         <li className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}><a href={location.pathname === '/' ? '#home' : '/#home'}>Home</a></li>
         <li className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}><a href={location.pathname === '/' ? '#about' : '/#about'}>About</a></li>
         <li className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}><a href={location.pathname === '/' ? '#topics' : '/#topics'}>Topics</a></li>
-        <li className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}><a href="/course">Courses</a></li>
+        <li className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}><a href={location.pathname === '/' ? '#contact' : '/#contact'}>Contact</a></li>
         {/* <li className="p__opensans_white"><a href="#contact">Contact</a></li> */}
       </ul>
       <div className="app__navbar-login">
-        <a href="#login" className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}>Log In / Registration</a>
+        <a href="/login" className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}>Log In / Registration</a>
         <div />
-        <a href="/" className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}>Book Table</a>
+        <a href="/course" className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}>Course</a>
       </div>
       <div className="app__navbar-smallscreen">
         <GiHamburgerMenu color="#fff" fontSize={27} onClick={() => setToggleMenu(true)} />
@@ -52,9 +52,9 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="p__opensans_white" style={{ textShadow: '0px 0px 3px rgba(0, 0, 0, 0.8)' }}>
-                <a href="/course" onClick={() => setToggleMenu(false)}>
+                <a href={location.pathname === '/' ? '#contact' : '/#contact'} onClick={() => setToggleMenu(false)}>
                   <img src={images.key} alt="key" style={{ width: '2rem', marginRight: '1rem' }} />
-                  Courses
+                  Contact
                 </a>
               </li>
               {/* <li><a href="#contact" onClick={() => setToggleMenu(false)}>Contact</a></li> */}
