@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { SubHeading } from '../../components';
 import { images } from '../../constants';
@@ -10,7 +11,9 @@ const Header = () => (
       <SubHeading title="Key To Success" />
       <h1 className="app__header-h1" style={{ textShadow: '0px 0px 4px rgba(0, 0, 0, 0.5)' }}>Independent Learning</h1>
       <p className="p__opensans_white" style={{ margin: '2rem 0' }}>Professional mechanical learning algorithms and appropriate course recommendations<br />to unleash your potential. Your future depends on your dreams! </p>
-      <button type="button" className="custom__button p__opensans_white" style={{ textShadow: '0px 0px 2px rgba(0, 0, 0, 0.6' }}>Menu</button>
+      <Link to="/course">
+        <button type="button" className="custom__button p__opensans_white" style={{ textShadow: '0px 0px 2px rgba(0, 0, 0, 0.6' }}>Check it out</button>
+      </Link>
     </div>
 
     <div className="app__wrapper_img">

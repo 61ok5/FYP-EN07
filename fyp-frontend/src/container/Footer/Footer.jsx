@@ -19,7 +19,8 @@ const Footer = () => (
       </div>
 
       <div className="app__footer-links_logo">
-        <img src={images.gericht} alt="footer_logo" />
+        {/* <img src={images.gericht} alt="footer_logo" /> */}
+        <div className="app__footer-links_logo-head">Course Master</div>
         <p className="p__opensans">&quot;Think big goals and win big success.&quot;</p>
         <img src={images.key} className="key__img" style={{ marginTop: 15 }} />
         <div className="app__footer-links_icons">
@@ -39,7 +40,7 @@ const Footer = () => (
     </div>
 
     <div className="footer__copyright">
-      <p className="p__opensans">2022 Gericht. No Rights reserved.</p>
+      <p className="p__opensans">2022 Course Master. No Rights reserved.</p>
     </div>
 
   </div>

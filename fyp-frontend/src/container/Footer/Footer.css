@@ -30,6 +30,15 @@
     text-align: center;
 }
 
+.app__footer-links_logo-head {
+    flex: 1;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: var(--font-logo);
+    font-size: 2rem;
+    color: var(--color-black);
+}
+
 .app__footer-links_logo img:first-child {
     width: 210px;
     margin-bottom: 0.75rem;

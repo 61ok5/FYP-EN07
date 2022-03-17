@@ -12,10 +12,23 @@
     /* border-bottom: 1px solid var(--color-golden); */
 }
 
+.app__navbar-logo-white {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: var(--font-logo);
+    font-size: 1.2rem;
+    color: white;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
 .app__navbar-logo {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    font-family: var(--font-logo);
+    font-size: 1.2rem;
+    color: black;
 }
 
 .app__navbar-logo img {

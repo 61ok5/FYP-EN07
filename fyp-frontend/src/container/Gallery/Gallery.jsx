@@ -57,7 +57,9 @@ const Gallery = () => {
         </div>
         <h1 className="headtext__cormorant" style={{ fontSize: '5rem', marginBottom: '1rem', lineHeight: '6rem' }}>Top 10 Courses</h1>
         <p className="p__opensans" style={{ color: '#888888', marginTop: '2rem', marginBottom: '2rem' }}>Top 10 courses recommended by deep learning algorithms based on user reviews.</p>
-        <button type="button" className="custom__button p__opensans_white" style={{ textShadow: '0px 0px 2px rgba(0, 0, 0, 0.6)' }}>View More</button>
+        <Link to="/course">
+          <button type="button" className="custom__button p__opensans_white" style={{ textShadow: '0px 0px 2px rgba(0, 0, 0, 0.6)' }}>View More</button>
+        </Link>
       </div>
       <div className="app__gallery-images">
         <div className="app__gallery-images_container" ref={scrollRef}>
