@@ -4,12 +4,14 @@ import clsx from 'clsx';
 import { Formik } from 'formik';
 import React from 'react';
 import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 import useAuth from './useAuth';
 import useScriptRef from './useScriptRef';
 
 const JWTLogin = ({ className, ...rest }) => {
   const { login } = useAuth();
   const scriptedRef = useScriptRef();
+  const navigate = useNavigate();
 
   return (
     <Formik
@@ -28,6 +30,7 @@ const JWTLogin = ({ className, ...rest }) => {
           if (scriptedRef.current) {
             setStatus({ success: true });
             setSubmitting(false);
+            navigate(-1);
           }
         } catch (err) {
           console.error(err);

@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
+// import axios from 'axios';
 import images from '../../constants/images';
+import useAuth from '../Login/useAuth';
 import './Navbar.css';
 
 const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = React.useState(false);
+  const { user } = useAuth();
+  // const [userData, setUserData] = useState(null);
+  const [toggleMenu, setToggleMenu] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    console.log('hi', user);
+  }, [user]);
+
+  // const initAccountDetails = async () => {
+  //   setUserData(user);
+  // };
+
+  // useEffect(() => {
+  //   initAccountDetails();
+  //   console.log('hi', userData);
+  // }, [user]);
 
   return (
     <nav className="app__navbar" style={location.pathname !== '/' ? { borderBottom: '0.1rem solid #ebdcac', position: 'relative' } : {}}>
