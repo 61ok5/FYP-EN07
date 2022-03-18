@@ -120,7 +120,7 @@ export const JWTProvider = ({ children }) => {
         const refreshToken = window.localStorage.getItem('refreshToken');
         if (verifyToken(serviceToken)) {
           setSession(serviceToken, refreshToken);
-          const response = axios.get('http://10.0.1.183/api/user/me');
+          const response = await axios.get('http://10.0.1.183/api/user/me');
           const user = response.data;
           // const menuResponse = await API.get_menu_item();
           // const menuItem = menuResponse.data;

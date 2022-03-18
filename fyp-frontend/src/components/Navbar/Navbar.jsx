@@ -2,32 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
-import axios from 'axios';
+// import axios from 'axios';
 import images from '../../constants/images';
 import useAuth from '../Login/useAuth';
 import './Navbar.css';
 
 const Navbar = () => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, user } = useAuth();
   const [toggleMenu, setToggleMenu] = useState(false);
   const location = useLocation();
 
-  const [meData, setMeData] = useState({});
-
-  const initAccountDetails = async () => {
-    if (isLoggedIn) {
-      const response = await axios.get('http://10.0.1.183/api/user/me');
-      setMeData(response.data);
-    }
-  };
-
   useEffect(() => {
-    initAccountDetails();
-  }, []);
-
-  useEffect(() => {
-    console.log('test', meData);
-  }, [meData]);
+    console.log('test', isLoggedIn, user);
+  }, [user]);
 
   // const initAccountDetails = async () => {
   //   setUserData(user);
@@ -52,7 +39,7 @@ const Navbar = () => {
         {/* <li className="p__opensans_white"><a href="#contact">Contact</a></li> */}
       </ul>
       <div className="app__navbar-login">
-        <a href="/login" className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}>Log In / Registration</a>
+        <a href={isLoggedIn ? '/' : '/login'} className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}>{isLoggedIn ? user.nickname : 'Log In / Registration'}</a>
         <div />
         <a href="/course" className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}>Course</a>
       </div>
