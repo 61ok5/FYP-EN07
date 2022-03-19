@@ -5,6 +5,7 @@ import MenuItem from './Menuitem/MenuItem';
 import Navbar from './Navbar/Navbar';
 import Course from './Course/Course';
 import Login from './Login/Login';
+import Register from './Login/Register';
 
 export {
   SubHeading,
@@ -14,4 +15,5 @@ export {
   Navbar,
   Course,
   Login,
+  Register,
 };

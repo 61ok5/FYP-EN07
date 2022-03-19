@@ -30,7 +30,7 @@ const JWTLogin = ({ className, ...rest }) => {
           if (scriptedRef.current) {
             setStatus({ success: true });
             setSubmitting(false);
-            navigate(-1);
+            navigate('/');
           }
         } catch (err) {
           console.error(err);

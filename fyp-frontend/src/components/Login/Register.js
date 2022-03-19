@@ -3,7 +3,7 @@ import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 // import Logo from './../../assets/images/brand.png';
-import JWTLogin from './JWTLogin';
+import JWTRegister from './JWTRegister';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -58,21 +58,21 @@ const Login = () => {
           <CardContent className={classes.content}>
             <Grid container direction="column" spacing={4} justifyContent="center">
               <Grid item xs={12}>
-                <Typography variant="h3" align="center" className={classes.title}>
-                  Login
-                </Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <JWTLogin />
-              </Grid>
-              <Grid item xs={12}>
-                <Grid container justifyContent="center">
+                <Grid container justifyContent="space-between">
                   <Grid item>
-                    <RouterLink to="/register">
-                      If you don&apos;t have an account, click here to register one.
+                    <RouterLink to="/" className={classes.icon}>
+                      {/* <img alt="Logo" src={Logo} className={classes.logo} /> */}
                     </RouterLink>
                   </Grid>
                 </Grid>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography variant="h3" align="center" className={classes.title}>
+                  Register
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <JWTRegister />
               </Grid>
             </Grid>
           </CardContent>
