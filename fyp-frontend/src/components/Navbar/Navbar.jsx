@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
 // import axios from 'axios';
@@ -29,7 +29,9 @@ const Navbar = () => {
     <nav className="app__navbar" style={location.pathname !== '/' ? { borderBottom: '0.1rem solid #ebdcac', position: 'relative' } : {}}>
       <div className={location.pathname === '/' ? 'app__navbar-logo-white' : 'app__navbar-logo'}>
         {/* <img src={images.gericht} alt="app__logo" /> */}
-        Course Master
+        <Link to="/">
+          Course Master
+        </Link>
       </div>
       <ul className="app__navbar-links">
         <li className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}><a href={location.pathname === '/' ? '#home' : '/#home'}>Home</a></li>
