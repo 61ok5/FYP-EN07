@@ -18,7 +18,7 @@ export default function useBookSearch(query, pageNumber) {
     axios({
       method: 'GET',
       url: 'http://10.0.1.183/api/course/info/all',
-      params: { RowsOfPage: 12, PageNumber: pageNumber },
+      params: { RowsOfPage: 12, PageNumber: pageNumber, Query: query },
       cancelToken: new axios.CancelToken((c) => { cancel = c; }),
     }).then((res) => {
       setBooks((prevBooks) => [...new Set([...prevBooks, ...res.data])]);

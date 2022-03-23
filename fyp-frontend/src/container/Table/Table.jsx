@@ -37,7 +37,26 @@ export default function App() {
       <input className="searchBar" type="text" value={query} onChange={handleSearch} />
       {books.map((book, index) => {
         if (books.length === index + 1) {
-          return <div ref={lastBookElementRef} key={book.title}>{book.title}{book.id}</div>;
+          return (
+            <Link to={`/course/${book.id}`}>
+              <div ref={lastBookElementRef} className="table_row" key={book.title}>
+                <div className="table_img">
+                  <img src={book.img} alt="img err" style={{ width: '100%', height: '100%' }} />
+                </div>
+                <div className="table_content">
+                  <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{book.title}</div>
+                  <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{book.headline}</div>
+                  <div style={{ fontSize: '1.25rem', color: '#444444', marginBottom: '0.2rem' }}>{book.instructor}, {book.instructional_level}</div>
+                  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.2rem' }}>
+                    <div style={{ fontSize: '1.5rem', color: '#DCCA87', marginRight: '0.5rem' }}>{book.rating.toPrecision(3)}</div>
+                    <StarRatingComponent name="rating" starCount={5} value={book.rating} editing={false} />
+                  </div>
+                  <div style={{ fontSize: '1rem', color: '#666666', marginBottom: '0.5rem' }}>{(book.i_category !== null && (book.p_category || book.ps_category)) ? `${book.i_category} - ` : ''}{(book.p_category && book.p_category) ? `${book.p_category} - ` : ''}{book.ps_category}</div>
+                  <div style={{ fontSize: '1.5rem', marginBottom: '0.2rem' }}>{book.price}</div>
+                </div>
+              </div>
+            </Link>
+          );
         }
         return (
           <Link to={`/course/${book.id}`}>
@@ -60,8 +79,8 @@ export default function App() {
           </Link>
         );
       })}
-      <div>{loading && 'Loading...'}</div>
-      <div>{error && 'Error'}</div>
+      <div>{loading && !error && 'Loading...'}</div>
+      <div>{error && 'Error - Please retype slowly'}</div>
     </div>
   );
 }
