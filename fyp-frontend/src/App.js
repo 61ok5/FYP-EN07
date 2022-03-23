@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import { AboutUs, Bridge, Footer, Gallery, Header, Table } from './container';
-import { Navbar, Course, Login, Register } from './components';
+import { Navbar, Course, Login, Register, Profile } from './components';
 import { theme } from './components/Login/theme';
 import { JWTProvider } from './components/Login/JWTContext';
 import './App.css';
@@ -36,6 +36,7 @@ const App = () => {
               <Route path="/course/:id" element={<><Course /></>} />
               <Route path="/login" element={<><Login /></>} />
               <Route path="/register" element={<><Register /></>} />
+              <Route path="/profile" element={<><Profile /></>} />
             </Routes>
           </Router>
         </JWTProvider>

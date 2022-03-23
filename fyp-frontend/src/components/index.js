@@ -6,6 +6,7 @@ import Navbar from './Navbar/Navbar';
 import Course from './Course/Course';
 import Login from './Login/Login';
 import Register from './Login/Register';
+import Profile from './Profile/Profile';
 
 export {
   SubHeading,
@@ -16,4 +17,5 @@ export {
   Course,
   Login,
   Register,
+  Profile,
 };
