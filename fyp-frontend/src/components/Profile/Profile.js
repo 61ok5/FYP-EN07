@@ -214,13 +214,64 @@ const Profile = () => {
             <form noValidate onSubmit={handleSubmit}>
               <Grid container spacing={3}>
                 <Grid item xs={12}>
-                  <Card>
+                  <Card style={{ height: '92vh' }}>
                     <CardHeader
-                      title={<Typography component="div" className="card-header">Change Password</Typography>}
+                      title={<Typography component="div" className="card-header">Account Profile</Typography>}
                     />
                     <Divider />
                     <CardContent>
                       <Grid container spacing={3}>
+                        <Grid item xs={12}>
+                          <TextField
+                            InputProps={{ readOnly: true }}
+                            name="email"
+                            fullWidth
+                            label="Email"
+                            variant="standard"
+                            onBlur={handleBlur}
+                            onChange={handleChange}
+                            value={meData.email}
+                          />
+                        </Grid>
+                        <Grid item xs={12}>
+                          <TextField
+                            InputProps={{ readOnly: true }}
+                            name="nickname"
+                            fullWidth
+                            label="Nickname"
+                            variant="standard"
+                            onBlur={handleBlur}
+                            onChange={handleChange}
+                            value={meData.nickname}
+                          />
+                        </Grid>
+                        <Grid item xs={12}>
+                          <TextField
+                            InputProps={{ readOnly: true }}
+                            name="tel"
+                            fullWidth
+                            label="Tel"
+                            variant="standard"
+                            onBlur={handleBlur}
+                            onChange={handleChange}
+                            value={meData.tel}
+                          />
+                        </Grid>
+                        <Grid item xs={12}>
+                          <TextField
+                            InputProps={{ readOnly: true }}
+                            name="role"
+                            fullWidth
+                            label="Role"
+                            variant="standard"
+                            onBlur={handleBlur}
+                            onChange={handleChange}
+                            value={meData.role}
+                          />
+                        </Grid>
+                        <CardHeader
+                          title={<Typography component="div" className="card-header">Change Password</Typography>}
+                        />
                         <Grid item xs={12}>
                           <TextField
                             type="password"
