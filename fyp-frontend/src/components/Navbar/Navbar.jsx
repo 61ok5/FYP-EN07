@@ -41,7 +41,7 @@ const Navbar = () => {
         {/* <li className="p__opensans_white"><a href="#contact">Contact</a></li> */}
       </ul>
       <div className="app__navbar-login">
-        <a href={isLoggedIn ? '/' : '/login'} className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}>{isLoggedIn ? user.nickname : 'Log In / Registration'}</a>
+        <a href={isLoggedIn ? '/profile' : '/login'} className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}>{isLoggedIn ? user.nickname : 'Log In / Registration'}</a>
         <div />
         <a href="/course" className={location.pathname === '/' ? 'p__opensans_white' : 'p__opensans'}>Course</a>
       </div>

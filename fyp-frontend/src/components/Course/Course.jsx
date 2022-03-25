@@ -1,19 +1,34 @@
+/* eslint camelcase: 1 */
 import React, { useState, useEffect } from 'react';
 // import React from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { Button } from '@mui/material';
 import StarRatingComponent from 'react-star-rating-component';
 // import useCourse from './useCourse';
 // import Chip from '@mui/material/Chip';
 // import { Link } from 'react-router-dom';
 import './Course.css';
 import Recommendation from './Recommendation/Recommendation';
+import useAuth from '../Login/useAuth';
 
 const Course = () => {
   const { id } = useParams();
+  const { isLoggedIn } = useAuth();
+  const [status, setStatus] = useState(false);
+  const [btn, setBtn] = useState(false);
 
   const [course, setCourse] = useState([]);
   // const [recommemdation, setRecommemdation] = useState([]);
+
+  const handleAdd = async () => {
+    setBtn(true);
+    const course_id = id;
+    const result = await axios.post('http://10.0.1.183/api/course/list/update', { course_id });
+    if (result.data.status === 'ok') {
+      setStatus(true);
+    }
+  };
 
   const initCourse = async () => {
     const response = await axios({
@@ -64,7 +79,11 @@ const Course = () => {
               <StarRatingComponent name="rating" starCount={5} value={course.rating} editing={false} />
             </div>
             <div style={{ fontSize: '1rem', color: '#666666', marginBottom: '1rem' }}>{(course.i_category !== null && (course.p_category || course.ps_category)) ? `${course.i_category} - ` : ''}{(course.p_category && course.p_category) ? `${course.p_category} - ` : ''}{course.ps_category}</div>
-            <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>{course.price}</div>
+            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginBottom: '0.4rem' }}>
+              <div style={{ fontSize: '1.5rem', marginRight: '1rem' }}>{course.price}</div>
+              <div style={{ marginRight: '1rem' }}>{isLoggedIn && <Button variant="contained" onClick={handleAdd} color="primary" type="button">Add Course</Button>}</div>
+              <div>{btn && status && 'Successfully added!'}</div>
+            </div>
           </div>
         </div>
       </div>
