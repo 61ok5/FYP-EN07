@@ -52,7 +52,7 @@ const Recommendation = ({ id }) => {
     <div className="app__recommendation flex__center">
       <div className="app__recommendation-content">
         <div style={{ marginBottom: '4rem' }}>
-          <p className="p__opensans" style={{ color: '#666666', fontSize: '2rem', lineHeight: '4rem' }}>Recommendation Courses</p>
+          <p className="p__opensans" style={{ color: '#666666', fontSize: '2rem', lineHeight: '4rem' }}>Recommended Courses</p>
           {/* <img src={images.key} alt="key_image" className="key__img" /> */}
         </div>
         {/* <h1 className="headtext__cormorant" style={{ fontSize: '5rem', marginBottom: '1rem', lineHeight: '6rem' }}>Top 10 Courses</h1>
