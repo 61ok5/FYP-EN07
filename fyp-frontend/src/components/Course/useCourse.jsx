@@ -16,7 +16,7 @@ export default function useCourse(id) {
     let cancel;
     axios({
       method: 'GET',
-      url: `http://10.0.1.183/api/course/info/${id}`,
+      url: `https://fyp-en07.hkrnd.com/api/course/info/${id}`,
       cancelToken: new axios.CancelToken((c) => { cancel = c; }),
     }).then((res) => {
       setCourse(() => res.data);

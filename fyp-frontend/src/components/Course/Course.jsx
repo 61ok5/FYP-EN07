@@ -24,7 +24,7 @@ const Course = () => {
   const handleAdd = async () => {
     setBtn(true);
     const course_id = id;
-    const result = await axios.post('http://10.0.1.183/api/course/list/update', { course_id });
+    const result = await axios.post('https://fyp-en07.hkrnd.com/api/course/list/update', { course_id });
     if (result.data.status === 'ok') {
       setStatus(true);
     }
@@ -33,7 +33,7 @@ const Course = () => {
   const initCourse = async () => {
     const response = await axios({
       method: 'GET',
-      url: `http://10.0.1.183/api/course/info/${id}`,
+      url: `https://fyp-en07.hkrnd.com/api/course/info/${id}`,
     });
     // response.data[0].description = response.data[0].description.replace(/<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});/gi, '');
     // response.data.response[0].category = response.data.response[0].category.replace(/[^a-z, ']/gi, '');
@@ -43,7 +43,7 @@ const Course = () => {
   // const initRecommadtion = async () => {
   //   const response = await axios({
   //     method: 'GET',
-  //     url: `http://10.0.1.183/api/course/result?preload=1&mode=0&toDB=0&title=${course.title}`,
+  //     url: `https://fyp-en07.hkrnd.com/api/course/result?preload=1&mode=0&toDB=0&title=${course.title}`,
   //   });
   //   // response.data[0].description = response.data[0].description.replace(/<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});/gi, '');
   //   // response.data.response[0].category = response.data.response[0].category.replace(/[^a-z, ']/gi, '');

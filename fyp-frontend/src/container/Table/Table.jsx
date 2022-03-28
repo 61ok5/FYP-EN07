@@ -95,7 +95,7 @@ export default function App() {
 
 //   function getData() {
 //     const RowsOfPage = 50;
-//     axios.get(`http://10.0.1.183/api/course/info/all?PageNumber=${PageNumber}&RowsOfPage=${RowsOfPage}`)
+//     axios.get(`https://fyp-en07.hkrnd.com/api/course/info/all?PageNumber=${PageNumber}&RowsOfPage=${RowsOfPage}`)
 //       .then((response) => {
 //         if (PageNumber > 1) {
 //           const arr = [...data, ...response.data];

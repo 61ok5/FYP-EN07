@@ -151,14 +151,14 @@ const Profile = () => {
   });
 
   const initAccountDetails = async () => {
-    const response = await axios.get('http://10.0.1.183/api/user/me');
+    const response = await axios.get('https://fyp-en07.hkrnd.com/api/user/me');
     setMeData(response.data);
   };
 
   const [list, setList] = useState([]);
 
   const initList = async () => {
-    const response = await axios.get('http://10.0.1.183/api/course/list/info/all');
+    const response = await axios.get('https://fyp-en07.hkrnd.com/api/course/list/info/all');
     setList(response.data);
   };
 
@@ -253,7 +253,7 @@ const Profile = () => {
           })}
           onSubmit={async (values, { setErrors, setStatus, setSubmitting, resetForm }) => {
             try {
-              await axios.post('http://10.0.1.183/api/user/changePassword/', { old_password: values.oldPassword, new_password: values.password, confirm_password: values.confirmPassword });
+              await axios.post('https://fyp-en07.hkrnd.com/api/user/changePassword/', { old_password: values.oldPassword, new_password: values.password, confirm_password: values.confirmPassword });
               resetForm({});
               dispatch({ ...actionTypes.SNACKBAR_SUCCESS, message: 'Password Changed!' });
             } catch (err) {

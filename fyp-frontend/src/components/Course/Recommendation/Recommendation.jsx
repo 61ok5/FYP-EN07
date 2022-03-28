@@ -23,7 +23,7 @@ const Recommendation = ({ id }) => {
     let cancel;
     axios({
       method: 'GET',
-      url: `http://10.0.1.183/api/course/result?preload=1&mode=1&toDB=0&id=${id}`,
+      url: `https://fyp-en07.hkrnd.com/api/course/result?preload=1&mode=1&toDB=0&id=${id}`,
       // params: { preload: 1, num: 10 },
       cancelToken: new axios.CancelToken((c) => { cancel = c; }),
     }).then((res) => {

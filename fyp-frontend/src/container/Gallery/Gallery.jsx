@@ -23,7 +23,7 @@ const Gallery = () => {
     let cancel;
     axios({
       method: 'GET',
-      url: 'http://10.0.1.183/api/course/top',
+      url: 'https://fyp-en07.hkrnd.com/api/course/top',
       params: { preload: 1, num: 10 },
       cancelToken: new axios.CancelToken((c) => { cancel = c; }),
     }).then((res) => {

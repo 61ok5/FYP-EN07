@@ -39,7 +39,7 @@ const JWTLogin = ({ className, ...rest }) => {
       onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
         try {
           //  await login(values.email, values.password);
-          const response = await axios.post('http://10.0.1.183/api/user/create', { email: values.email, password: values.password, nickname: values.nickname, tel: values.tel, role_id: values.role_id });
+          const response = await axios.post('https://fyp-en07.hkrnd.com/api/user/create', { email: values.email, password: values.password, nickname: values.nickname, tel: values.tel, role_id: values.role_id });
           if (response.data.status === 'ok') {
             setStatus({ success: true });
             setSubmitting(false);
