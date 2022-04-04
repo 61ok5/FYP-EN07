@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 // import { BsInstagram, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
 import { BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
 
@@ -11,6 +11,7 @@ const Recommendation = ({ id }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [data, setData] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     console.log(data);
@@ -34,7 +35,7 @@ const Recommendation = ({ id }) => {
       setError(true);
     });
     return () => cancel();
-  }, []);
+  }, [location]);
 
   const scrollRef = React.useRef(null);
 
