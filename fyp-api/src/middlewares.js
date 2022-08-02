@@ -47,9 +47,9 @@ async function apiTokenGetUserId(req, res, next) {
     if (userId) {
       req.user.id = userId;
     } else if (userPhone) {
-      const stmt = `SELECT id FROM bc_1100_users WHERE user_phone = ?`;
-      const { locolla_query } = require('./db');
-      const result = await locolla_query(stmt, [
+      const stmt = `SELECT id FROM users WHERE user_phone = ?`;
+      const { query } = require('./db');
+      const result = await query(stmt, [
         userPhone
       ]);
       if (result.length > 0) {
