@@ -27,28 +27,4 @@ const query = (sql, values) => new Promise((resolve, reject) => {
   });
 });
 
-const locolla_pool = mysql.createPool({
-  host: process.env.LOCOLLA_SQL_HOST,
-  database: process.env.LOCOLLA_SQL_DB,
-  user: process.env.LOCOLLA_SQL_USER,
-  password: process.env.LOCOLLA_SQL_PASS,
-});
-
-const locolla_query = (sql, values) => new Promise((resolve, reject) => {
-  locolla_pool.getConnection((err, connection) => {
-    if (err) {
-      reject(err);
-    } else {
-      connection.query(sql, values, (e, rows) => {
-        if (e) {
-          reject(e);
-        } else {
-          resolve(rows);
-        }
-        connection.release();
-      });
-    }
-  });
-});
-
-module.exports = { query, locolla_query };
+module.exports = { query };
