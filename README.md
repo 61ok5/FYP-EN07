@@ -5,18 +5,20 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 -->
-
-  <h3 align="center">2021 - 2022<br/>Electrical Engineering Final Year Project</h3>
-  <h2 align="center">Course Recommendation for Learning Management System<br/>using Machine Learning Algorithm</h2>
-
+  
+  <h2 align="center">2021 - 2022<br/>City University of Hong Kong</h2>
+  <h3 align="center">Electrical Engineering Final Year Project</h3>
+  <h3 align="center">Course Recommendation for Learning Management System<br/>using Machine Learning Algorithm</h3>
+  
 
   <p align="center">
-    Industrial FYP EN-07
+    INFE Industrial FYP EN-07
     <br />
     <a href="https://fyp-en07.hkrnd.com/"><strong>View Demo »</strong></a>
   </p>
 </div>
 
+<br />
 
 
 <!-- TABLE OF CONTENTS -->
@@ -47,7 +49,7 @@
 
 The pandemic of Covid-19, which has been raging around the world since 2019, has caused a dramatic change in the way of people' lifestyle. From the time people started staying at home, they have gradually switched their daily lives, including schooling and working, to online. For this reason, a resurgence of interest in online learning providers, such as Udemy and Coursera, has been observed. Certainly, those online learning providers are going to take advantage of this opportunity, vigorously pursue the introduction of more quality courses and lecturers. Apart from the popular providers, many educational institutions are also driven by the trend to explore the possibility and feasibility of online education. As a result, numerous providers have launched their own learning management systems. However, due to their inexperience, these systems are fraught with problems.
 
-Sengital, the company that offered me an internship, expressed its concern about the current situation and also explained the circumstances. It points out that these rushed LMS will be confronted with various issues on user experience. Especially with the ever-growing amount of courses, their existing system would be insufficient for such large volume. As a result, either excessive response time or irrelevant course recommendations will lead to a poor experience on the UX. 
+Sengital, the company that offered me an internship, expressed its concern about the current situation and also explained the circumstances. It points out that these rushed LMS will be confronted with various issues on user experience. Especially with the ever-growing amount of courses, their existing system would be insufficient for such large volume. As a result, either excessive response time or irrelevant course recommendations will lead to a poor experience on the UX. Therefore, Sengital approached me to look into and address the issues.
 
 After careful discussion, the project resulted in consisting of four main components:
 * Website
@@ -55,7 +57,7 @@ After careful discussion, the project resulted in consisting of four main compon
 * Database
 * Machine Learning Algorithm
 
-In particular, Sengital proposed the use of machine learning as the project approach, which encouraged me to look into the project.
+In particular, Sengital proposed the use of machine learning as the solution, which caught my interest and encouraged me to study and research.
 
 <!--Use the `BLANK_README.md` to get started.-->
 
