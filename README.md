@@ -57,7 +57,7 @@ After careful discussion, the project resulted in consisting of four main compon
 * Database
 * Machine Learning Algorithm
 
-In particular, Sengital proposed the use of machine learning as the solution, which caught my interest and encouraged me to study and research.
+In particular, Sengital proposed the use of machine learning as the solution, which caught my interest to study and research.
 
 <!--Use the `BLANK_README.md` to get started.-->
 
